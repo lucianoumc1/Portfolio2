@@ -1,5 +1,6 @@
 ---
-
+import Slider from "../components/Slider.astro";
+import image from "../assets/background.jpg";
 ---
 
 <html lang="en">
@@ -8,9 +9,16 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>LupiDev</title>
   </head>
   <body>
     <h1>astro</h1>
+    <Slider
+      title="Titulo de programa 1"
+      text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt id libero cum rerum! Reprehenderit repellendus necessitatibus "
+      githubUrl=""
+      productionUrl=""
+      backgroundImage="../assets/background.jpg"
+    />
   </body>
 </html>

@@ -1,0 +1,69 @@
+---
+import { string } from "astro/zod";
+import Card from "./CardSlider.astro";
+
+interface Props {
+  title: string;
+  text: string;
+  githubUrl: string;
+  productionUrl: string;
+  backgroundImage?: string;
+}
+const { title, text, githubUrl, productionUrl, backgroundImage } = Astro.props;
+---
+
+<section
+  class="h-[850px] flex justify-between items-center slider-container relative overflow-visible"
+>
+  <div class="flex flex-col gap-4 flex-shrink-0">
+    <h3 class="text-5xl">{title}</h3>
+    <span class="max-w-screen-sm text-lg">{text}</span>
+    <div>
+      <button class="button">Github</button>
+      <button class="button">Produccion</button>
+    </div>
+  </div>
+  <div class="flex gap-2 justify-self-end ml-44">
+    <Card />
+    <Card />
+    <Card />
+  </div>
+  <div class="slider-buttons">
+    <button> ◀ </button>
+    <button> ▶ </button>
+  </div>
+</section>
+
+<style>
+  .slider-container {
+    margin: 0 auto;
+    max-width: 80%;
+    background-image: url(../assets/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    fill-opacity: 0.5;
+    color: white;
+    padding: 25px 80px;
+  }
+  .slider-container * {
+    max-width:;
+  }
+  .button {
+    padding: 0.4rem 0.8rem;
+    background-color: lightblue;
+  }
+  .slider-buttons {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .slider-buttons button {
+    border-radius: 100%;
+    padding: 0.8rem 1rem;
+    background-color: lightcoral;
+  }
+</style>
